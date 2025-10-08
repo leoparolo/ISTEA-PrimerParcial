@@ -6,7 +6,7 @@ import java.text.NumberFormat
 import java.util.Locale
 
 @Composable
-fun ArgentineCurrencyFormatter(): NumberFormat {
+fun argentineCurrencyFormatter(): NumberFormat {
     return remember {
         NumberFormat.getNumberInstance(Locale("es", "AR")).apply {
             minimumFractionDigits = 2
@@ -20,6 +20,6 @@ fun Parse(texto: String): Double? =
     texto.replace(',', '.').toDoubleOrNull()
 
 @Composable
-fun CurrencyPattern(): Regex = remember {
+fun currencyPattern(): Regex = remember {
     Regex("^\\d{0,9}(?:[\\.,]\\d{0,2})?$") // 9 enteros y hasta 2 decimales
 }

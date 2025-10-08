@@ -26,8 +26,6 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import java.text.NumberFormat
-import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -38,8 +36,8 @@ fun RetiroPage(
     var retiroText by remember { mutableStateOf("") }
     val retiro = Parse(retiroText)
 
-    val pattern = CurrencyPattern()
-    val amountFmt = ArgentineCurrencyFormatter()
+    val pattern = currencyPattern()
+    val amountFmt = argentineCurrencyFormatter()
     var error by remember { mutableStateOf<String?>(null) }
 
     fun validar(): Boolean {
